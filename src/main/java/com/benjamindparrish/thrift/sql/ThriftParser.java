@@ -22,7 +22,7 @@ public class ThriftParser {
     private static final String ENUM = "enum";
     private static final String REQUIRED = "required";
 
-    private static final String ENUM_ID_COLUMN = "ID";
+    private static final String ID_COLUMN = "ID_KEY";
     private static final String ENUM_VALUE_COLUMN = "VALUE";
 
     private final File _file;
@@ -183,6 +183,10 @@ public class ThriftParser {
 
         sqlWriter.write(str);
 
+        String idStr = String.format(TAB + "`" + ID_COLUMN + "`" + " BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY," + LINE_SEPARATOR);
+
+        sqlWriter.write(idStr);
+
         inTable = true;
     }
     
@@ -191,9 +195,7 @@ public class ThriftParser {
 
         createTable(tokens, sqlWriter);
         
-        String str =
-                TAB + ENUM_ID_COLUMN + " INT NOT NULL AUTO_INCREMENT PRIMARY KEY," + LINE_SEPARATOR +
-                TAB + ENUM_VALUE_COLUMN + " VARCHAR(255) NOT NULL" + LINE_SEPARATOR;
+        String str = TAB + ENUM_VALUE_COLUMN + " VARCHAR(255) NOT NULL" + LINE_SEPARATOR;
         
         sqlWriter.write(str);
         

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/thrift-sql-scriptor.iml" filepath="$PROJECT_DIR$/thrift-sql-scriptor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thrift-sql-scriptor.iml" filepath="$PROJECT_DIR$/thrift-sql-scriptor.iml" />
     </modules>
   </component>
 </project>
